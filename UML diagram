@@ -1,0 +1,68 @@
+classDiagram
+    class Paint {
+        +DEFAULT_PEN_SIZE: float
+        +DEFAULT_COLOR: str
+        -root: Tk
+        -toolbar_frame: Frame
+        -button_font_size: Font
+        -menubar: Menu
+        -filemenu: Menu
+        -editmenu: Menu
+        -back_button: Button
+        -pen_button: Button
+        -brush_button: Button
+        -color_button: Button
+        -eraser_button: Button
+        -text_button: Button
+        -clear_button: Button
+        -undo_icon: PhotoImage
+        -undo_button: Button
+        -redo_icon: PhotoImage
+        -redo_button: Button
+        -choose_size_label: Label
+        -choose_size_button: Scale
+        -c: Canvas
+        +__init__()
+        -setup()
+        +open_new()
+        +save_drawing()
+        -paint()
+        -reset()
+        -go_back()
+        -choose_bg()
+        -use_pen()
+        -use_brush()
+        -choose_color()
+        -use_eraser()
+        -insert_text()
+        -activate_button()
+        -play_click()
+        -undo()
+        -redo()
+        -start_typing()
+        -clear_canvas()
+        -change_button_font_size()
+        -open_image()
+    }
+    class InitialMenu {
+        -root: Tk
+        -title_label: Label
+        -paint_icon: PhotoImage
+        -paint_button: Button
+        -gallery_icon: PhotoImage
+        -gallery_button: Button
+        -quit_button: Button
+        +__init__()
+        -open_paint()
+        -open_gallery()
+    }
+    class Gallery {
+        -root: Tk
+        -exit_tab: Frame
+        -back_button: Button
+        -c: Canvas
+        +__init__()
+        -open_image()
+    }
+    Paint <|-- InitialMenu
+    Paint <|-- Gallery
